@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Stu as StuModel;
 use Illuminate\Http\Request;
 
 class Stu extends Controller
@@ -14,6 +14,19 @@ class Stu extends Controller
     public function index()
     {
         //
+
+        $stu= StuModel::get();
+
+        return view('stu/stu_list',['stu'=>$stu]);
+//        return view('stu_list')->with('$stu',$stu);
+//        return view('stu_list',campate('stu'));
+    }
+
+
+    public function add()
+    {
+        //
+        return view('add');
     }
 
     /**
@@ -35,6 +48,11 @@ class Stu extends Controller
     public function store(Request $request)
     {
         //
+        $input=$request->except('_token');
+        $input['password']= md5($input['password']);
+
+        $res = StuModel::create($input);
+        dd($res);
     }
 
     /**
@@ -57,6 +75,8 @@ class Stu extends Controller
     public function edit($id)
     {
         //
+      $user=  StuModel::find($id);
+        return view('stu/stu_edit',compact('user'));
     }
 
     /**
@@ -66,9 +86,20 @@ class Stu extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id=null)
     {
         //
+//       $input = $request->all();
+        $input=$request->except('_token');
+
+        $input['password']= md5($input['password']);
+        $res= StuModel::find($input['id'])->update($input);
+//        dd($input);
+        if ($res){
+            return redirect('stu');
+        }else{
+            back();
+        }
     }
 
     /**
@@ -80,5 +111,8 @@ class Stu extends Controller
     public function destroy($id)
     {
         //
+        StuModel::destroy($id);
+
+        return redirect('stu');
     }
 }
