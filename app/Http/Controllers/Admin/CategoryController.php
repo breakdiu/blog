@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
-class PhotoController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +16,14 @@ class PhotoController extends Controller
     public function index()
     {
         //
-        echo '111';
+        $cate=Category::select(
+            '*'
+        )
+            ->orderBy('sort')
+
+            ->paginate(10);
+//        dd($cate);
+        return view('admin.cate.catelist',compact('cate'));
     }
 
     /**
@@ -25,6 +34,7 @@ class PhotoController extends Controller
     public function create()
     {
         //
+        return view('admin.cate.cateadd');
     }
 
     /**
@@ -36,6 +46,18 @@ class PhotoController extends Controller
     public function store(Request $request)
     {
         //
+
+        $input= $request->except('_token');
+        $input['user_id']=session()->get('user')->id;
+//        dd( $input['user_id']);
+        $res=  Category::create($input);
+        if($res){
+            echo "添加成功";
+            return redirect('admin/cate')->with('success','good');
+        }else{
+            echo "添加失败";
+            return back();
+        }
     }
 
     /**
@@ -58,6 +80,8 @@ class PhotoController extends Controller
     public function edit($id)
     {
         //
+     $cate=Category::find($id);
+        return view('admin.cate.cateedit',compact('cate'));
     }
 
     /**
@@ -70,7 +94,22 @@ class PhotoController extends Controller
     public function update(Request $request, $id)
     {
         //
+        //
+        $input=$request->except('_token');
+//      dd( $input);
+
+
+        $res= Category::find($input['id'])->update($input);
+//        dd($input);
+        if ($res){
+
+            return redirect('admin/cate')->with('success','good');
+        }else{
+            back('admin/cate/edit');
+        }
+
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -81,5 +120,14 @@ class PhotoController extends Controller
     public function destroy($id)
     {
         //
+
+//        dd($id);
+        $res=Category::destroy($id);
+        if($res){
+            return redirect('admin/cate');
+        }else
+        {
+            return back();
+        }
     }
 }

@@ -15,10 +15,48 @@ Route::get('/stu/edit/{id}','Stu@edit');
 Route::get('/stu/add','Stu@add');
 Route::get('/stu/destroy/{id}','Stu@destroy');
 Route::get('/user','UserController@index');
+Route::get('/stu/getCaptcha','stu@getCaptcha')->name('getCaptcha');
 Route::post('/stu/store','Stu@store');
 Route::post('/stu/update','Stu@update');
-Route::get('/', function () {
 
+//上传路由pretest;
+Route::post('/stu/upload','Stu@upload');
+Route::resource('stu','Stu');
+//admin模块
+Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>'isLogin'],function (){
+//    Route::get('index','UserController@index');
+    //退出登录
+    Route::get('logout','LoginController@logout');
+
+    //后台用户模块路由
+    Route::resource('user','UserController');
+    //分类资源路由
+    Route::resource('cate','CategoryController');
+    //文章路由
+    Route::resource('article','ArticleController');
+
+});
+Route::get('admin/site/edit','admin\Site@edit');
+Route::put('admin/site/update','admin\Site@update');
+
+//登录
+Route::get('admin/login','admin\LoginController@login');
+
+Route::post('admin/dologin','admin\LoginController@doLogin');
+Route::get('admin/getCaptcha','admin\LoginController@getCaptcha');
+Route::get('admin/cate/destroy/{id}','admin\CategoryController@destroy');
+Route::get('admin/article/destroy/{id}','admin\ArticleController@destroy');
+//Home模块
+Route::group(['prefix'=>'home','namespace'=>'home','middleware'=>'Ready'],function () {
+    Route::get('login', 'LoginController@login');
+    Route::post('insert', 'LoginController@insert');
+    Route::get('register', 'LoginController@register');
+    Route::get('index', 'IndexController@index');
+    Route::post('dologin', 'LoginController@doLogin');
+});
+//加密
+Route::get('admin/jiami','admin\LoginController@jiami');
+Route::get('/', function () {
    return view('welcome');
 
 });
