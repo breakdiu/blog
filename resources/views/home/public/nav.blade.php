@@ -50,7 +50,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">操作<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="{:url('index/insert')}">发布文章</a></li>
+                        <li><a href="{{url('home/create')}}">发布文章</a></li>
                         <li role="separator" class="divider"></li>
                         <!-- 跳转到后台的管理中心 -->
                         <li>

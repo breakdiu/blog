@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('testRedis','RedisController@testRedis')->name('testRedis');
 Route::get('/stu','Stu@index');
 Route::get('/stu/edit/{id}','Stu@edit');
 Route::get('/stu/add','Stu@add');
@@ -52,6 +53,8 @@ Route::group(['prefix'=>'home','namespace'=>'home','middleware'=>'Ready'],functi
     Route::post('insert', 'LoginController@insert');
     Route::get('register', 'LoginController@register');
     Route::get('index', 'IndexController@index');
+    Route::get('create', 'IndexController@create');
+    Route::post('store', 'IndexController@store');
     Route::post('dologin', 'LoginController@doLogin');
 });
 //加密

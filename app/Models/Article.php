@@ -11,7 +11,7 @@ class Article extends Model
 
     protected $table = 'article';
     protected $primaryKey = 'id';
-    public $timestamps = true;
+    public $timestamps = false;
     public $incrementing = true;
 
 

@@ -2,12 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4bf8888-c8dd-4809-a885-4a49f5f34e22" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/add.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/demo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/IndexController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/IsLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/IsLogin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Article.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Article.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/index/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/index/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/index/insert.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/index/insert.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/public/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/public/nav.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -112,6 +119,8 @@
       <path value="$PROJECT_DIR$/vendor/league/commonmark" />
       <path value="$PROJECT_DIR$/vendor/laravel/framework" />
       <path value="$PROJECT_DIR$/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/vendor/gregwar/captcha" />
+      <path value="$PROJECT_DIR$/vendor/predis/predis" />
     </include_path>
   </component>
   <component name="ProjectId" id="1YtnZUT93iGbdkoY1uOH6hV2Pcg" />
@@ -125,7 +134,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../redis/test.php" />
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -149,6 +158,10 @@
       <workItem from="1584361159086" duration="1319000" />
       <workItem from="1584532543885" duration="3029000" />
       <workItem from="1584703177263" duration="6624000" />
+      <workItem from="1586426360078" duration="17331000" />
+      <workItem from="1586498278547" duration="10753000" />
+      <workItem from="1586580577111" duration="12691000" />
+      <workItem from="1586672514247" duration="6068000" />
     </task>
     <servers />
   </component>
@@ -160,13 +173,21 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="233" y="2" key="#Notifications/0.0.1280.680@0.0.1280.680" timestamp="1584703965731" />
-    <state x="457" y="271" key="NewPhpFileDialog" timestamp="1584711306873">
+    <state x="421" y="98" key="FileChooserDialogImpl" timestamp="1586525613519">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="457" y="271" key="NewPhpFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1584711306873" />
-    <state x="336" y="168" key="com.intellij.ide.util.TipDialog" timestamp="1584703178282">
+    <state x="421" y="98" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1586525613519" />
+    <state x="457" y="271" key="NewPhpFileDialog" timestamp="1586524958726">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="336" y="168" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1584703178282" />
+    <state x="457" y="271" key="NewPhpFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1586524958726" />
+    <state x="336" y="168" key="com.intellij.ide.util.TipDialog" timestamp="1586672520153">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="336" y="168" key="com.intellij.ide.util.TipDialog/0.0.1280.680@0.0.1280.680" timestamp="1586672520153" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1586454782261">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1586454782261" />
   </component>
 </project>

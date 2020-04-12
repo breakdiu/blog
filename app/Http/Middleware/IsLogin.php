@@ -16,6 +16,7 @@ class IsLogin
     public function handle($request, Closure $next)
     {
         if (session()->get('user')){
+//            dd(session()->get('user'));
             return $next($request);
            view()->share('user', session()->get('user'));
         }else{

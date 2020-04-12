@@ -9,9 +9,11 @@
   			<h2>发布文章</h2>
 		</div>
 		<!-- 注册表单:采用水平表单 -->
-		<form action="{:url('index/index/save')}" enctype="multipart/form-data" method="post">
+		<form action="{{url('home/store')}}" enctype="multipart/form-data" method="post">
 			<!-- 用隐藏域向服务器传送作者:当用发布文章的用户id -->
-                <input type="hidden" name="user_id" value="{$Think.session.user_id}">
+            @csrf
+
+
                 <div class="form-group">
                     <label for="title">标题</label>
                     <input type="text" name="title" class="form-control" id="title" placeholder="文章标题">
@@ -19,9 +21,9 @@
                 <div class="form-group">
                     <label>分类</label>
                     <select class="form-control" name="cate_id"> <!--name与字段名对应-->
-                        {volist name="cateList" id="cate"}
-                            <option value="{$cate.id}">{$cate.name}</option>
-                        {/volist}
+                        @foreach($cate as $v)
+                            <option value="{{$v->id}}">{{$v->name}}</option>
+                        @endforeach
                     </select>
                 </div>
 
