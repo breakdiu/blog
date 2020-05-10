@@ -52,8 +52,9 @@ Route::group(['prefix'=>'home','namespace'=>'home','middleware'=>'Ready'],functi
     Route::get('login', 'LoginController@login');
     Route::post('insert', 'LoginController@insert');
     Route::get('register', 'LoginController@register');
-    Route::get('index', 'IndexController@index');
+    Route::get('index/{id?}', 'IndexController@index');
     Route::get('create', 'IndexController@create');
+    Route::get('show/{id}', 'IndexController@show');
     Route::post('store', 'IndexController@store');
     Route::post('dologin', 'LoginController@doLogin');
 });

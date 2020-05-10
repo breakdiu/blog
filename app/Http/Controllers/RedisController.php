@@ -42,6 +42,37 @@ class RedisController extends Controller
 
         var_dump( Redis::exists ( 'foo' )) ; //true
         var_dump(Redis::lrange ('array', 0, -1)); //返回第0个至倒数第一个, 相当于返回所有元素
+        //定义一个变量，存放所有的文章记录
+//          $arts=[];
+//
+//
+////        $article=Article::paginate(5);
+//        $listkey='LIST:ARTICLE';
+//        $hashkey='HASH:ARTICLE';
+//        //redis中存在要取的文章
+//        if (Redis::exists($listkey)){
+//            //存放所有要获取文章的id
+//            $lists=Redis::lrange($listkey,-1,0);
+////             dd( $lists);
+//            foreach ($lists as $k=>$v){
+//
+//                $arts[]=Redis::hgetall($hashkey.$v);
+//
+//            }
+//        }else{
+////            连接MySQL数据库，获取需要的数据
+//            $arts=Article::paginate(5);
+//
+////           dd($arts);
+////         将数据存入ridis
+//           foreach ($arts as $k=>$v){
+////               将文章的id添加到listkey变量中
+//           Redis::rpush($listkey,$v['id']);
+//           //将文章添加到hashkey变量中
+//               Redis::hmset($hashkey,$v['id'],$v);
+//
+//           }
+//        }
 
     }
 }

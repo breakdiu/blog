@@ -21,7 +21,7 @@
 
       <!-- 根据session判断用户是否登录,显示不同的内容 -->
    @if(session()->get('user'))
-        <li><a href="">{{session()->get('user')->name}}</a></li>
+        <li><a href="{{url('admin/user/'.session()->get('user')->id.'/edit')}}">{{session()->get('user')->name}}</a></li>
         <li><a href="{{url('home/index')}}">回到首页</a></li>
       <li><a href="{{url('admin/logout')}}">退出登录</a></li>
        @endif

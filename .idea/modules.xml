@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../72crm/.idea/72crm.iml" filepath="$PROJECT_DIR$/../72crm/.idea/72crm.iml" />
       <module fileurl="file://$USER_HOME$/Desktop/somedemo/baijunyao-laravel-bjyblog-master/.idea/baijunyao-laravel-bjyblog-master.iml" filepath="$USER_HOME$/Desktop/somedemo/baijunyao-laravel-bjyblog-master/.idea/baijunyao-laravel-bjyblog-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/demo.iml" filepath="$PROJECT_DIR$/.idea/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../source/.idea/source.iml" filepath="$PROJECT_DIR$/../source/.idea/source.iml" />
       <module fileurl="file://$PROJECT_DIR$/../tp51/.idea/tp51.iml" filepath="$PROJECT_DIR$/../tp51/.idea/tp51.iml" />
+      <module fileurl="file://D:/qiand/vdemo/.idea/vdemo.iml" filepath="D:/qiand/vdemo/.idea/vdemo.iml" />
+      <module fileurl="file://D:/qiand/vrouter/.idea/vrouter.iml" filepath="D:/qiand/vrouter/.idea/vrouter.iml" />
     </modules>
   </component>
 </project>

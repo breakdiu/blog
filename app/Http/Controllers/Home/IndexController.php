@@ -5,55 +5,45 @@ namespace App\Http\Controllers\Home;
 use App\Http\Controllers\Controller;
 
 use App\Models\Article;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
-
+use App\Models\Category;
 class IndexController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+
+    public function index(Request $request,$id=null)
     {
-        //定义一个变量，存放所有的文章记录
 
+        //设置全局查询条件
+        $map = [];  //将当前页面的全部查询条件封装到一个条件数组中
+        // 条件1:显示状态必须为1
+        $map[] = ['status', '=', 1];  //等号必须要有,不允许省略
 
-          $arts=[];
-
-
-//        $article=Article::paginate(5);
-        $listkey='LIST:ARTICLE';
-        $hashkey='HASH:ARTICLE';
-        //redis中存在要取的文章
-        if (Redis::exists($listkey)){
-            //存放所有要获取文章的id
-            $lists=Redis::lrange($listkey,-1,0);
-//             dd( $lists);
-            foreach ($lists as $k=>$v){
-
-                $arts[]=Redis::hgetall($hashkey.$v);
-
-            }
-        }else{
-//            连接MySQL数据库，获取需要的数据
-            $arts=Article::paginate(5);
-
-//           dd($arts);
-//         将数据存入ridis
-           foreach ($arts as $k=>$v){
-//               将文章的id添加到listkey变量中
-           Redis::rpush($listkey,$v['id']);
-           //将文章添加到hashkey变量中
-               Redis::hmset($hashkey,$v['id'],$v);
-
-           }
+        //实现搜索功能
+        $keywords = $request->input('keywords');
+//      echo $keywords;
+        if (!empty($keywords)) {
+            //条件2: 模糊匹配查询条件
+            $map[] = ['title', 'like', '%'.$keywords . '%'];
         }
+//      print_r($map);
+//
+//        //分类信息显示
+//        //1.获取到URL中的分类ID
+       $cateId =   $id;
+//  echo $cateId;
+        //如果当前存在分类ID,再进行查询获取到分类名称
+       if (isset($cateId)) {
+//           print_r($map);
+//            //条件3: 当前列表与当前栏目id对应,此时$map[]条件数组生成完毕
+           $map[] = ['cate_id', '=', $cateId];
 
-        $art=Article::paginate(5);
-        return view('home.index.index',compact('arts','art'));
-    }
+       }
+           $arts = Article:: where($map)->paginate(5);
+
+            return view('home.index.index', compact('arts'));
+        }
 
     /**
      * Show the form for creating a new resource.
@@ -116,6 +106,15 @@ class IndexController extends Controller
     public function show($id)
     {
         //
+
+        $article=Article::find($id);
+
+
+       $art_u= User::find($article->user_id)->value('name');
+//       dd($art_u);
+        $art_c= Category::find($article->cate_id)->value('name');
+
+        return view('home.index.detail',compact('article','art_u','art_c'));
     }
 
     /**
@@ -173,4 +172,5 @@ class IndexController extends Controller
       }
 
     }
+
 }

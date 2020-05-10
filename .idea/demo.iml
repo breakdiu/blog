@@ -98,5 +98,9 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="tp51" />
     <orderEntry type="module" module-name="baijunyao-laravel-bjyblog-master" />
+    <orderEntry type="module" module-name="vdemo" />
+    <orderEntry type="module" module-name="72crm" />
+    <orderEntry type="module" module-name="vrouter" />
+    <orderEntry type="module" module-name="source" />
   </component>
 </module>

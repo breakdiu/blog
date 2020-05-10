@@ -6,18 +6,18 @@
 		<div class="col-md-8">
 		<!-- 页头 -->
 		<div class="page-header">
-  			<h2>{$art.cate_id|getCateName}</h2>
+  			<h2>{{$art_c}}</h2>
 		</div>
 
 		<div>
 
-             <h4>{$art.title}</h4>
-                <p>作者:{$art.user_id|getUserName}&nbsp;&nbsp;
-               发布时间:{$art.create_time}&nbsp;&nbsp;
-               阅读量:{$art.pv}&nbsp;&nbsp;
+             <h4>{{$article->title}}</h4>
+                <p>作者:{{$art_u}}&nbsp;&nbsp;
+               发布时间:{{date('Y-m-d H:i:s',$article->create_time)}}&nbsp;&nbsp;
+               阅读量:{{$article->pv}}&nbsp;&nbsp;
 
                </p>
-               <div>{:htmlspecialchars_decode($art.content)}</div>
+               <div>{!! $article->content !!}</div>
               <hr/>
               <button type="button"
                class="btn btn-default" id="fav"

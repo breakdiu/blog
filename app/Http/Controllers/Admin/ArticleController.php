@@ -26,7 +26,7 @@ class ArticleController extends Controller
             $artList=Article:: join('article_category', 'article.cate_id', '=', 'article_category.id')
                 ->join('user', 'user.id', '=', 'article.user_id')
                 ->select('user.name as username','article.*','article_category.*')
-                ->where('user_id',$userId)->paginate(5);
+                ->where('article.user_id',$userId)->paginate(5);
         }else{
             $artList=Article::join('article_category', 'article.cate_id', '=', 'article_category.id')
                 ->join('user', 'user.id', '=', 'article.user_id')
