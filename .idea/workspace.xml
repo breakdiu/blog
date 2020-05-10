@@ -4,19 +4,7 @@
     <list default="true" id="f4bf8888-c8dd-4809-a885-4a49f5f34e22" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/../72crm/.idea/72crm.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../72crm/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/../72crm/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/demo.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Home/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Home/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RedisController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RedisController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/public/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/public/nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/index/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/index/detail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/index/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/index/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home/public/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home/public/nav.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="D:/qiand/vdemo/package-lock.json" beforeDir="false" afterPath="D:/qiand/vdemo/package-lock.json" afterDir="false" />
       <change beforePath="D:/qiand/vdemo/package.json" beforeDir="false" afterPath="D:/qiand/vdemo/package.json" afterDir="false" />
@@ -224,7 +212,7 @@
       <workItem from="1588904260010" duration="26401000" />
       <workItem from="1588998644572" duration="12081000" />
       <workItem from="1589086011214" duration="36000" />
-      <workItem from="1589086786989" duration="10193000" />
+      <workItem from="1589086786989" duration="12298000" />
     </task>
     <servers />
   </component>

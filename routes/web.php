@@ -10,19 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('testRedis','RedisController@testRedis')->name('testRedis');
-Route::get('/stu','Stu@index');
-Route::get('/stu/edit/{id}','Stu@edit');
-Route::get('/stu/add','Stu@add');
-Route::get('/stu/destroy/{id}','Stu@destroy');
-Route::get('/user','UserController@index');
-Route::get('/stu/getCaptcha','stu@getCaptcha')->name('getCaptcha');
-Route::post('/stu/store','Stu@store');
-Route::post('/stu/update','Stu@update');
 
-//上传路由pretest;
-Route::post('/stu/upload','Stu@upload');
-Route::resource('stu','Stu');
 //admin模块
 Route::group(['prefix'=>'admin','namespace'=>'Admin','middleware'=>'isLogin'],function (){
 //    Route::get('index','UserController@index');
@@ -64,3 +52,16 @@ Route::get('/', function () {
    return view('welcome');
 
 });
+Route::get('testRedis','RedisController@testRedis')->name('testRedis');
+Route::get('/stu','Stu@index');
+Route::get('/stu/edit/{id}','Stu@edit');
+Route::get('/stu/add','Stu@add');
+Route::get('/stu/destroy/{id}','Stu@destroy');
+Route::get('/user','UserController@index');
+Route::get('/stu/getCaptcha','stu@getCaptcha')->name('getCaptcha');
+Route::post('/stu/store','Stu@store');
+Route::post('/stu/update','Stu@update');
+
+//上传路由pretest;
+Route::post('/stu/upload','Stu@upload');
+Route::resource('stu','Stu');
